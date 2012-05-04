@@ -7,5 +7,4 @@ You can run the programm by typing 'python guess.py' into the command line. (nee
 
 coming soon:
 
-ability to use command line arguments like this:
-python guess.py low high guesslimit
+ability to use command line arguments like this: #python guess.py low high guesslimit
