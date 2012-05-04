@@ -33,7 +33,7 @@ try:
 			break
 
 except KeyboardInterrupt:
-	print("\n  =^C detected, terminating...")
+	print("\n  ^C detected, terminating...")
 	sys.exit()
 
 if guess == number:
