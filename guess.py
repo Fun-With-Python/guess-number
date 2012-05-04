@@ -1,7 +1,7 @@
 ###############################
 # file guess.py               #
 # author Nanak Tattyrek       #
-# version 0.2                 #
+# version 0.3                 #
 ###############################
 
 import random
@@ -19,19 +19,27 @@ number = random.randint(1,15)
 
 try:
 
-	while guessnumb <= guesslimit:
-		guess = int(raw_input('What\'s your guess? '))
-		guessnumb += 1
+	while guessnumb < guesslimit:
+		try:
+			guess = int(raw_input('What\'s your guess? '))
+		except ValueError:
+			print("Couldn\'t convert input to Integer")
+			continue
+	
+		if guess < low or guess > high:
+			print("Value out of range ({0} - {1})".format(low, high))
+		else:
+			guessnumb += 1
+			
+			if guess < number:
+				print("Your guess was too low")
 		
-		if guess < number:
-			print("Your guess was too low")
+			if guess > number:
+				print("Your guess was too high")
+		
+			if guess == number:
+				break
 	
-		if guess > number:
-			print("Your guess was too high")
-	
-		if guess == number:
-			break
-
 except KeyboardInterrupt:
 	print("\n  ^C detected, terminating...")
 	sys.exit()
