@@ -47,4 +47,4 @@ except KeyboardInterrupt:
 if guess == number:
 	print("Great, you guessed the number in {0} trys".format(guessnumb))
 else:
-	print("No, I was thinking of th number {0}".format(number))
+	print("No, I was thinking of the number {0}".format(number))
