@@ -15,7 +15,7 @@ print("Guess a number between {0} and {1}".format(low, high))
 print("You have 5 guesses to get the right number")
 
 guessnumb = 0
-number = random.randint(1,15)
+number = random.randint(low, high)
 
 try:
 
