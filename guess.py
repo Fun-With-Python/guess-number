@@ -1,9 +1,15 @@
+###############################
+# file guess.py               #
+# author Nanak Tattyrek       #
+# version 0.2                 #
+###############################
+
 import random
 import sys
 
 low = 1
 high = 30
-limit = 5
+guesslimit = 5
 
 print("Guess a number between {0} and {1}".format(low, high))
 print("You have 5 guesses to get the right number")
@@ -13,7 +19,7 @@ number = random.randint(1,15)
 
 try:
 
-	while guessnumb <= limit:
+	while guessnumb <= guesslimit:
 		guess = int(raw_input('What\'s your guess? '))
 		guessnumb += 1
 		
