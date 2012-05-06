@@ -1,7 +1,7 @@
 ###############################
 # file guess.py               #
 # author Nanak Tattyrek       #
-# version 0.4                 #
+# version 0.5                 #
 ###############################
 
 import random
@@ -12,7 +12,7 @@ high = 30
 guesslimit = 5
 
 print("Guess a number between {0} and {1}".format(low, high))
-print("You have {0} guesses to get the right number").format(guesslimit)
+print("You have {0} guesses to get the right number".format(guesslimit))
 
 guessnumb = 0
 number = random.randint(low, high)
@@ -20,7 +20,7 @@ number = random.randint(low, high)
 try:
 	while guessnumb < guesslimit:
 		try:
-			guess = int(raw_input('What\'s your guess? '))
+			guess = int(input('What\'s your guess? '))
 		except ValueError:
 			print("Couldn\'t convert input to Integer")
 			continue
@@ -41,6 +41,10 @@ try:
 	
 except KeyboardInterrupt:
 	print("\n  ^C detected, terminating...")
+	sys.exit()
+
+except EOFError:
+	print("\n  ^D detected, terminating...")
 	sys.exit()
 
 if guess == number:
